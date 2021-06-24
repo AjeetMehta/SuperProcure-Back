@@ -10,6 +10,9 @@ var saltRounds = 10;
 var app = express.Router();
 
 // seed();
+app.get("/", function (req, res) {
+  res.send("SuperProcure Backend");
+});
 
 app.get("/all", function (req, res) {
   branch.find({}, function (err, found) {

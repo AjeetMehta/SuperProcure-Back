@@ -2,7 +2,7 @@ var express = require("express");
 var branch = require("../models/details");
 var malik = require("../models/register");
 var admin = require("../models/adminschema");
-var seed = require("../seed.js");
+// var seed = require("../seed.js");
 
 var bcrypt = require("bcrypt");
 var saltRounds = 10;

@@ -30,16 +30,20 @@ app.post("/pin", function (req, res) {
 });
 
 // app.post("/adminregister", function (req, res) {
-//   bcrypt.hash(req.body.password, saltRounds, function (hash) {
-//     var name = req.body.name;
-//     var password = hash;
-//     var item = { name: name, password: password };
-//     admin.create(item, function (err) {
-//       if (err) res.status(400).send(err);
-//       else {
-//         res.send({ message: "Registration Successful" });
-//       }
-//     });
+//   bcrypt.hash(req.body.password, saltRounds, function (error, hash) {
+//     console.log(hash);
+//     if (error) res.send(error);
+//     else {
+//       var name = req.body.name;
+//       var pass = hash;
+//       var item = { name: name, password: pass };
+//       admin.create(item, function (err) {
+//         if (err) res.status(400).send(err);
+//         else {
+//           res.send({ message: "Registration Successful" });
+//         }
+//       });
+//     }
 //   });
 // });
 
@@ -47,7 +51,7 @@ app.post("/login", function (req, res) {
   var branch = req.body.branch;
   var password = req.body.password;
 
-  malik.findOne({ branch: branch }, function (err, found) {
+  malik.findOne({ branch: branch }, function (error, found) {
     if (!found)
       res.status(400).send({
         error: "Either Your Branch is not registered Or You wrote wrong",

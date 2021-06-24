@@ -30,7 +30,7 @@ app.post("/pin", function (req, res) {
 });
 
 // app.post("/adminregister", function (req, res) {
-//   bcrypt.hash(req.body.password, saltRounds, function (err, hash) {
+//   bcrypt.hash(req.body.password, saltRounds, function (hash) {
 //     var name = req.body.name;
 //     var password = hash;
 //     var item = { name: name, password: password };
